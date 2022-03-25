@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { useState, useEffect } from 'react'
 import withErrorHandled from './ErrorHandler'
+import Searchbox from './Searchbox'
 
 function MobileAccordion() {
   const [open, setOpen] = useState(true)
@@ -21,6 +22,7 @@ function MobileAccordion() {
 function MobileVerticalNav() {
   return <nav className='flex flex-col items-center'>
     <NavItems/>
+    <Searchbox/>
   </nav>
 }
 
@@ -39,8 +41,9 @@ function HamburgerIcon() {
 
 function DesktopAccordion() {
   return (
-    <nav className='flex gap-10'>
+    <nav className='flex gap-10 items-center'>
       <NavItems />
+      <Searchbox/>
     </nav>
   )
 }

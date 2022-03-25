@@ -1,6 +1,6 @@
 import axios from 'axios'
 import { useEffect, useState } from 'react'
-import mockedPosts from '../pages/api/post/mockedPosts'
+import mockedPosts from '../pages/api/mockedPosts'
 import withErrorHandled from './ErrorHandler'
 import Chat from './icons/Chat'
 import Dollar from './icons/Dollar'

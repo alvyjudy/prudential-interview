@@ -10,7 +10,6 @@ function Navigation() {
         <Link href='/'>简书</Link>
       </p>
       <AdaptiveAccordion />
-      <Searchbox />
     </div>
   )
 }
