@@ -1,12 +1,16 @@
 import axios from 'axios'
 import { useRouter } from 'next/router'
 import { useState, useEffect } from 'react'
+import ArticleInteraction from './ArticleInteraction'
 import withErrorHandled from './ErrorHandler'
 
 function Article() {
   const article = useArticle()
   return (
-    <div>
+    <div className='relative'>
+      <div className='absolute -left-10'>
+      <ArticleInteraction/>
+      </div>
       <Detail article={article} />
     </div>
   )
@@ -15,10 +19,10 @@ function Article() {
 function Detail({ article }) {
   const { title, author, content } = article
   return (
-    <main>
+    <>
       <h1>{title}</h1>
       <p>{content}</p>
-    </main>
+    </>
   )
 }
 

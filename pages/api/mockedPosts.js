@@ -7,6 +7,7 @@ module.exports = [
     comments: 10,
     liked: 10,
     rewarded: 10,
+    views: 100,
     content: 'Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.'
   },
   {
@@ -17,6 +18,7 @@ module.exports = [
     comments: 10,
     liked: 10,
     rewarded: 10,
+    views: 100,
     content: 'Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.'
   },
   {
@@ -27,6 +29,7 @@ module.exports = [
     comments: 10,
     liked: 10,
     rewarded: 10,
+    views: 100,
     content: 'Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.'
   }
 ]
