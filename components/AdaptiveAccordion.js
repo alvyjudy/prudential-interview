@@ -20,10 +20,13 @@ function MobileAccordion() {
 }
 
 function MobileVerticalNav() {
-  return <nav className='flex flex-col items-center'>
-    <NavItems/>
-    <Searchbox/>
-  </nav>
+  return (
+    <nav className='flex flex-col items-center'>
+      <NavItemsOne />
+      <Searchbox />
+      <NavItemsTwo />
+    </nav>
+  )
 }
 
 /**
@@ -41,16 +44,29 @@ function HamburgerIcon() {
 
 function DesktopAccordion() {
   return (
-    <nav className='flex gap-10 items-center'>
-      <NavItems />
-      <Searchbox/>
+    <nav className='flex gap-10 items-center justify-between'>
+      <div className='flex gap-3 items-center'>
+        <NavItemsOne />
+        <Searchbox/>
+      </div>
+      <div className='flex items-center gap-3'>
+        <NavItemsTwo />
+      </div>
     </nav>
   )
 }
 
-function NavItems({
-  border=false
-}) {
+function NavItemsTwo() {
+  return (
+    <>
+      <Link href='/login'>Login</Link>
+      <Link href='/register'>Register</Link>
+      <Link href='/compose'>写文章</Link>
+    </>
+  )
+}
+
+function NavItemsOne({ border = false }) {
   return (
     <>
       <Link href='/'>首页</Link>
