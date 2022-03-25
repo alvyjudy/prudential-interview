@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react'
 import withErrorHandled from './ErrorHandler'
 
 function MobileAccordion() {
-  const [open, setOpen] = useState(false)
+  const [open, setOpen] = useState(true)
   return (
     <div>
       <button
@@ -19,7 +19,7 @@ function MobileAccordion() {
 }
 
 function MobileVerticalNav() {
-  return <nav>
+  return <nav className='flex flex-col items-center'>
     <NavItems/>
   </nav>
 }
@@ -39,13 +39,15 @@ function HamburgerIcon() {
 
 function DesktopAccordion() {
   return (
-    <nav>
+    <nav className='flex gap-10'>
       <NavItems />
     </nav>
   )
 }
 
-function NavItems() {
+function NavItems({
+  border=false
+}) {
   return (
     <>
       <Link href='/'>首页</Link>
