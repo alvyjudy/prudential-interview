@@ -11,7 +11,7 @@ module.exports = [
   },
   {
     title: 'Lorem Ipsum 2',
-    id: '2',
+    id:'2',
     author: 'bob',
     rating: 10,
     comments: 10,

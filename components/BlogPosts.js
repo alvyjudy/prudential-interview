@@ -8,7 +8,7 @@ import Heart from './icons/Heart'
 import Sparkle from './icons/Sparkle'
 
 function BlogPosts() {
-  const posts = mockedPosts // usePosts()
+  const posts = usePosts()
   if (posts.length) {
     return (
       <div className='flex flex-col gap-4'>
