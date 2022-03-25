@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Image from 'next/image'
+import BlogPosts from '../components/BlogPosts'
 import styles from '../styles/Home.module.css'
 
 export default function Home() {
@@ -9,8 +10,7 @@ export default function Home() {
         <title>简书 - 简直一模一样</title>
       </Head>
       <main>
-        <h1>第一篇文章</h1>
-        <h1>Heading</h1>
+        <BlogPosts/>
       </main>
     </div>
   )
