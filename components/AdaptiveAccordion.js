@@ -4,7 +4,7 @@ import withErrorHandled from './ErrorHandler'
 import Searchbox from './Searchbox'
 
 function MobileAccordion() {
-  const [open, setOpen] = useState(true)
+  const [open, setOpen] = useState(false)
   return (
     <div>
       <button
@@ -49,7 +49,7 @@ function DesktopAccordion() {
         <NavItemsOne />
         <Searchbox/>
       </div>
-      <div className='flex items-center gap-3'>
+      <div className='flex items-center gap-3 justify-end'>
         <NavItemsTwo />
       </div>
     </nav>
@@ -84,7 +84,14 @@ function Adaptive() {
       setIsMobile(false)
     }
   }, [])
-  return isMobile ? <MobileAccordion /> : <DesktopAccordion />
+  return <>
+    <div className='block md:hidden'>
+      <MobileAccordion />
+    </div>
+    <div className='hidden md:block'>
+      <DesktopAccordion />
+    </div>
+  </>
 }
 
 export default withErrorHandled(Adaptive)

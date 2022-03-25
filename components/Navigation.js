@@ -5,11 +5,13 @@ import Searchbox from './Searchbox'
 
 function Navigation() {
   return (
-    <div>
+    <div className='flex gap-4 border-b-2 border-b-neutral-700 p-2'>
       <p className='font-bold text-2xl'>
         <Link href='/'>简书</Link>
       </p>
-      <AdaptiveAccordion />
+      <div className='grow'>
+        <AdaptiveAccordion />
+      </div>
     </div>
   )
 }
