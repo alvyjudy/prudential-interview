@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import AdaptiveAccordion from './AdaptiveAccordion'
 import withErrorHandled from './ErrorHandler'
+import Searchbox from './Searchbox'
 
 function Navigation() {
   return (
@@ -8,7 +9,8 @@ function Navigation() {
       <p className='font-bold text-2xl'>
         <Link href='/'>简书</Link>
       </p>
-      <AdaptiveAccordion/>
+      <AdaptiveAccordion />
+      <Searchbox />
     </div>
   )
 }
