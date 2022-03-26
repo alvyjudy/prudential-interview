@@ -10,7 +10,7 @@ function HotStories() {
   return (
     <Card>
       <StoriesHeading title="热门故事"/>
-      <div>
+      <div className='w-full'>
       {stories.map(story => {
         return <div key={story.id}>
           <h2>{story.title}</h2>

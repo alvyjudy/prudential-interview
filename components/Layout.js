@@ -3,10 +3,10 @@ import Navigation from "./Navigation"
 
 function Layout({children}) {
   return <div>
-    <div>
+    <div className="">
       <Navigation/>
     </div>
-    <div>
+    <div className="">
       {children}
     </div>
   </div>

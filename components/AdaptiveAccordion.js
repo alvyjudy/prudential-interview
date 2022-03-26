@@ -73,7 +73,11 @@ function NavItemsTwo() {
 }
 
 function NavItemsOne({ border = false }) {
-  const isOnHomePage = location.pathname === '/'
+  let isOnHomePage 
+  try {
+    if (location.pathname === '/') isOnHomePage = true
+  } catch {}
+  
   return (
     <>
       <span className={isOnHomePage && 'text-orange-400'}>
