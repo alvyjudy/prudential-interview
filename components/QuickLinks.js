@@ -11,20 +11,30 @@ function QuickLinks() {
 
 function LinksGroupOne() {
   return <>
-    <Link href='/'>日更挑战</Link>
-    <Link href='/'>简书会员</Link>
-    <Link href='/'>优选连载</Link>
-    <Link href='/'>简书版权</Link>
+    <TextOverImage src='/bg-calendar.png' href='/' />
+    <TextOverImage src='/bg-membership.png' href='/' />
+    <TextOverImage src='/bg-series.png' href='/' />
+    <TextOverImage src='/bg-copyright.png' href='/' />
   </>
 }
 
+function TextOverImage({
+  src,
+  href
+}) {
+  return <div className="relative w-50 h-10 m-1">
+    <Image src={src} layout='fill' alt='bg' className=""/>
+    <Link href='/' className='hidden'>whatever</Link>
+  </div>
+}
+
 function AppQRCode() {
-  return <div className="flex">
-    <Image src="/app-qr-code.png" alt="qr-code" width="64" height="64"/>
-    <div>
-      <p className="text-md">下载简书手机App</p>
-      <p className="text-xs">随时随地发现和创作内容</p>
+  return <div className="grid grid-cols-4 grid-rows-2 bg-white h-20 w-30 rounded-md p-2">
+    <div className="row-span-2 col-span-1 relative">
+      <Image src="/app-qr-code.png" alt="qr-code" layout='fill' />
     </div>
+      <p className="text-md text-black col-span-3 row-span-1 justify-self-center self-center">下载简书手机App</p>
+      <p className="text-xs text-gray-700 col-span-3 row-span-1 justify-self-center self-center">随时随地发现和创作内容</p>
   </div>
 }
 

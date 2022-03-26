@@ -11,7 +11,7 @@ export default function Home() {
         <title>简书 - 简直一模一样</title>
       </Head>
       <main>
-        <div className='md:grid gap-4 grid-cols-4 grid-rows-1'>
+        <div className='md:grid gap-4 grid-cols-4 grid-rows-1 max-w-4xl m-auto'>
           <div className='col-span-3'>
             <BlogPosts/>
           </div>
