@@ -1,28 +1,18 @@
-import mockedPosts from "../mockedPosts"
-import mockedAuthors from '../mockedAuthors'
+import { AuthorModel, PostModel } from "../db"
 
-export default function handler(req, res) {
+export default async function handler(req, res) {
   const {tag} = req.query
   switch (tag) {
     case 'hot': 
-      hotStories(req, res)
+      res.json(await PostModel.find().limit(5))
       break
     case 'default':
-      recommend(req, res)
+      res.json(await PostModel.find().limit(5))
       break
     case 'authors':
-      res.json(mockedAuthors)
+      res.json(await AuthorModel.find().limit(5))
       break
     default: 
       res.status(400).send("Specify tag")
   }
-}
-
-async function hotStories(req, res) {
-  const allPosts = Post.find()
-  allPosts.sort()
-}
-
-function recommend(req, res) {
-  res.json(mockedPosts)
 }
