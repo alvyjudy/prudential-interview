@@ -10,7 +10,7 @@ function Post() {
   return (
     <div>
       <Head>
-        <title>{article.title}</title>
+        <title>简书 - {article.authorName}</title>
       </Head>
       <div className='relative lg:grid gap-4 grid-cols-4 grid-rows-1 max-w-3xl m-auto'>
         <main className='col-span-3'>

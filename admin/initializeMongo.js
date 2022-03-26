@@ -45,8 +45,8 @@ const Post = mongoose.model('Post', new Schema(PostSchema))
 const main = async () => {
   try {
     await client.connect()
-    const db = client.db(dbName)
-    await db.dropDatabase()
+
+    if (process.env.DROP_MONGO) await dropDatabase()
 
     await createBunch()
   } finally {
@@ -54,6 +54,11 @@ const main = async () => {
     await mongoose.connection.close()
     await client.close()
   }
+}
+
+const dropDatabase = async () => {
+  const db = client.db(dbName)
+  await db.dropDatabase()
 }
 
 main()
