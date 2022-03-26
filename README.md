@@ -57,4 +57,4 @@ $ docker-compose up web
 
 Then the app will be available at 0.0.0.0:3001
 
-# Dark mode and mobile view supported!
+# Automatic Dark mode and mobile view supported!
