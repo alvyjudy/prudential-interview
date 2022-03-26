@@ -19,7 +19,7 @@ function AuthorInfoLeft({ children }) {
           />
         )}
       </div>
-      <p className='col-start-2 col-end-4 rows-span-1 text-2xl font-bold'>{info.authorName}</p>
+      <p className='col-start-2 col-end-4 rows-span-1 text-2xl font-bold self-start'>{info.authorName}</p>
       <div className='col-start-2 col-end-4 row-span-3 self-end'>{children}</div>
     </div>
   )

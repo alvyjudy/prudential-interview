@@ -4,7 +4,7 @@ import Qr from "./icons/Qr"
 import Thumbup from "./icons/Thumbup"
 
 function ArticleInteraction() {
-  return <div className="flex flex-col">
+  return <div className="flex flex-col gap-4">
     <IconButton>
       <Thumbup/>
       <p>赞</p>
@@ -15,7 +15,7 @@ function ArticleInteraction() {
     </IconButton>
     <IconButton>
       <Qr/>
-      <p>更多好文</p>
+      <p className="text-sm">更多好文</p>
     </IconButton>
   </div>
 }

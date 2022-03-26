@@ -26,8 +26,8 @@ function AuthorInfoRight() {
               />
             )}
           </div>
-          <p className='row-span-1 col-span-2'>{info.authorName}</p>
-          <p className='row-span-1 col-span-2'>总资产：{info.totalAssets}</p>
+          <p className='row-span-1 col-span-2 text-lg font-bold'>{info.authorName}</p>
+          <p className='row-span-1 col-span-2 text-sm'>总资产：{info.totalAssets}</p>
         </div>
         <div>
           {posts.map(post => {
