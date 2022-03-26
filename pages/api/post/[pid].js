@@ -1,13 +1,8 @@
-import mockedPosts from "../mockedPosts"
+import { Post } from "../db"
 
-export default function handler(req, res) {
+export default async function handler(req, res) {
   const { pid } = req.query
-  const post = findPost(pid)
+  const post = await Post().findById(pid)
   res.json(post)
 }
 
-function findPost(pid) {
-  return mockedPosts.find(post => {
-    return post.id === pid
-  })
-}

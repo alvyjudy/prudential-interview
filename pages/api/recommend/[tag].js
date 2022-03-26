@@ -18,8 +18,9 @@ export default function handler(req, res) {
   }
 }
 
-function hotStories(req, res) {
-  res.json(mockedPosts)
+async function hotStories(req, res) {
+  const allPosts = Post.find()
+  allPosts.sort()
 }
 
 function recommend(req, res) {

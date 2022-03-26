@@ -1,11 +1,7 @@
-import mockedAuthors from "../mockedAuthors"
+import { AuthorModel } from "../db"
 
-export default function handler(req, res) {
+export default async function handler(req, res) {
   const { authorId } = req.query
-  const author = findAuthor(authorId)
+  const author = await AuthorModel.findById(authorId)
   res.json(author)
-}
-
-function findAuthor(authorId) {
-  return mockedAuthors.find(author => author.authorId === authorId)
 }

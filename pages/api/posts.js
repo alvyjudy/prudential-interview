@@ -1,6 +1,6 @@
-import mockedPosts from "./mockedPosts"
+import { PostModel } from "./db"
 
-
-export default function handler(req, res) {
-  res.json(mockedPosts)
+export default async function handler(req, res) {
+  const response = await PostModel.find()
+  res.json(response)
 }
