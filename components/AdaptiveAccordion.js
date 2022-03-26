@@ -14,14 +14,16 @@ function MobileAccordion() {
       >
         <HamburgerIcon />
       </button>
+      <div>
       {open ? <MobileVerticalNav /> : null}
+      </div>
     </div>
   )
 }
 
 function MobileVerticalNav() {
   return (
-    <nav className='flex flex-col items-center'>
+    <nav className='flex flex-col gap-3  items-center absolute z-20 bg-stone-100 dark:bg-neutral-800 w-full left-0 py-4'>
       <NavItemsOne />
       <Searchbox />
       <NavItemsTwo />
@@ -34,10 +36,10 @@ function MobileVerticalNav() {
  */
 function HamburgerIcon() {
   return (
-    <div className='p-4 space-y-2 bg-gray-600 rounded shadow w-16'>
-      <span className='block w-8 h-0.5 bg-gray-100 animate-pulse'></span>
-      <span className='block w-8 h-0.5 bg-gray-100 animate-pulse'></span>
-      <span className='block w-8 h-0.5 bg-gray-100 animate-pulse'></span>
+    <div className='p-3 space-y-0.5 bg-gray-600 rounded shadow w-10'>
+      <span className='block w-4 h-0.5 bg-gray-100 animate-pulse'></span>
+      <span className='block w-4 h-0.5 bg-gray-100 animate-pulse'></span>
+      <span className='block w-4 h-0.5 bg-gray-100 animate-pulse'></span>
     </div>
   )
 }
