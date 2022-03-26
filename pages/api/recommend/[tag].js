@@ -1,4 +1,5 @@
 import mockedPosts from "../mockedPosts"
+import mockedAuthors from '../mockedAuthors'
 
 export default function handler(req, res) {
   const {tag} = req.query
@@ -9,17 +10,16 @@ export default function handler(req, res) {
     case 'default':
       recommend(req, res)
       break
+    case 'authors':
+      res.json(mockedAuthors)
+      break
     default: 
       res.status(400).send("Specify tag")
   }
 }
 
 function hotStories(req, res) {
-
-}
-
-function moreOfThisAuthor(req, res) {
-
+  res.json(mockedPosts)
 }
 
 function recommend(req, res) {

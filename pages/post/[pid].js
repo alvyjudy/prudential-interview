@@ -4,7 +4,8 @@ import ArticleSide from "../../components/ArticleSide"
 import withErrorHandled from "../../components/ErrorHandler"
 
 function Post() {
-  return <div className="relative lg:grid gap-4 grid-cols-4 grid-rows-1">
+  
+  return <div className="relative lg:grid gap-4 grid-cols-4 grid-rows-1 max-w-xl m-auto">
     <main className="col-span-3">
       <Article/>
     </main>

@@ -1,17 +1,23 @@
-import axios from 'axios'
-import { useRouter } from 'next/router'
-import { useState, useEffect } from 'react'
+
 import ArticleInteraction from './ArticleInteraction'
+import AuthorInfoTwo from './AuthorInfoTwo'
 import withErrorHandled from './ErrorHandler'
+import useArticle from './useArticle'
 
 function Article() {
   const article = useArticle()
   return (
     <div className='relative'>
       <div className='absolute -left-10'>
-      <ArticleInteraction/>
+        <ArticleInteraction/>
       </div>
-      <Detail article={article} />
+      <div>
+        <AuthorInfoTwo>
+          <p className='text-sm'>{article.timeCreated}</p>
+          <p>Views: {article.views}</p>
+        </AuthorInfoTwo>
+        <Detail article={article} />
+      </div>
     </div>
   )
 }
@@ -26,20 +32,6 @@ function Detail({ article }) {
   )
 }
 
-function useArticle() {
-  const router = useRouter()
-  const { pid } = router.query
-  const [article, setArticle] = useState({})
-  useEffect(() => {
-    axios
-      .get(`/api/post/${pid}`)
-      .then(response => response.data)
-      .then(data => {
-        setArticle(data)
-      })
-      .catch(() => {})
-  }, [pid])
-  return article
-}
+
 
 export default withErrorHandled(Article)
