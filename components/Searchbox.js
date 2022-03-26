@@ -32,7 +32,7 @@ function StyledInput({ id, ...rest }) {
       </div>
       <input
         id={id}
-        className='bg-neutral-600 rounded-2xl h-9 px-5 w-40 font-light focus:outline-none'
+        className='bg-stone-200 dark:bg-neutral-600 rounded-2xl h-9 px-5 w-40 font-light focus:outline-none'
         placeholder='Search'
         {...rest}
       />

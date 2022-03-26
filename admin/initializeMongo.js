@@ -26,7 +26,7 @@ const getSecrets = require('../utils/getSecrets')
 const lorem = new LoremIpsum()
 
 const {MONGO_DB_URI} = getSecrets() // must specify the database name
-
+console.log('uri', MONGO_DB_URI)
 const dbName = MONGO_DB_URI.split('/').slice(-1)[0]
 
 const client = new MongoClient(MONGO_DB_URI)
