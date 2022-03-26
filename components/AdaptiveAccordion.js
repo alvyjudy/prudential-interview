@@ -75,14 +75,14 @@ function NavItemsTwo() {
 }
 
 function NavItemsOne({ border = false }) {
-  let isOnHomePage 
+  let isOnHomePage
   try {
-    if (location.pathname === '/') isOnHomePage = true
+    if (location.pathname === '/') isOnHomePage=true
   } catch {}
-  
+    
   return (
     <>
-      <span className={isOnHomePage && 'text-orange-400'}>
+      <span className={`${isOnHomePage ? 'text-orange-400' : ''}`}>
         <Link href='/'>首页</Link>
       </span>
       <Link href='/'>下载APP</Link>
