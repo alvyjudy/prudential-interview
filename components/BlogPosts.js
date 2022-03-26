@@ -6,6 +6,7 @@ import Chat from './icons/Chat'
 import Dollar from './icons/Dollar'
 import Heart from './icons/Heart'
 import Sparkle from './icons/Sparkle'
+import Link from 'next/link'
 
 function BlogPosts() {
   const posts = usePosts()
@@ -27,7 +28,11 @@ function IndividualPost({ post }) {
 
   return (
     <div className='border-b-2'>
-      <h1 className='text-xl font-bold'>{title}</h1>
+      <h1 className='text-xl font-bold'>
+        <Link href={`/post/${id}`}>
+        {title}
+        </Link>
+      </h1>
       <p>{content}</p>
       <div className='flex gap-3 items-center'>
         <IconWithText className='text-orange-400'>

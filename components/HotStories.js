@@ -2,11 +2,11 @@ import axios from 'axios'
 import { useState, useEffect } from 'react'
 import withErrorHandled from './ErrorHandler'
 import StoriesHeading from './StoriesHeading'
-import useStories from './useStories'
+import useRecommend from './useRecommend'
 import Card from './Card'
 
 function HotStories() {
-  const stories = useStories('hot')
+  const stories = useRecommend('hot')
   return (
     <Card>
       <StoriesHeading title="热门故事"/>

@@ -1,10 +1,10 @@
 import Card from "./Card"
 import withErrorHandled from "./ErrorHandler"
 import StoriesHeading from "./StoriesHeading"
-import useStories from "./useStories"
+import useRecommend from "./useRecommend"
 
 function Recommendation() {
-  const stories = useStories('default')
+  const stories = useRecommend('default')
   return (
     <Card>
       <StoriesHeading title="推荐阅读"/>
