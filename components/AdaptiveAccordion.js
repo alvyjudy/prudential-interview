@@ -47,7 +47,7 @@ function DesktopAccordion() {
     <nav className='flex gap-10 items-center justify-between'>
       <div className='flex gap-3 items-center'>
         <NavItemsOne />
-        <Searchbox/>
+        <Searchbox />
       </div>
       <div className='flex items-center gap-3 justify-end'>
         <NavItemsTwo />
@@ -59,17 +59,26 @@ function DesktopAccordion() {
 function NavItemsTwo() {
   return (
     <>
-      <Link href='/login'>Login</Link>
-      <Link href='/register'>Register</Link>
-      <Link href='/compose'>写文章</Link>
+      <span className=''>
+        <Link href='/login'>登录</Link>
+      </span>
+      <span className='border-2 rounded-2xl py-1 px-3 border-orange-400 text-orange-400'>
+        <Link href='/register'>注册</Link>
+      </span>
+      <span className='rounded-2xl py-1 px-8 bg-orange-700 text-neutral-200'>
+        <Link href='/compose'>写文章</Link>
+      </span>
     </>
   )
 }
 
 function NavItemsOne({ border = false }) {
+  const isOnHomePage = location.pathname === '/'
   return (
     <>
-      <Link href='/'>首页</Link>
+      <span className={isOnHomePage && 'text-orange-400'}>
+        <Link href='/'>首页</Link>
+      </span>
       <Link href='/'>下载APP</Link>
       <Link href='/'>会员</Link>
       <Link href='/'>IT技术</Link>
@@ -84,14 +93,16 @@ function Adaptive() {
       setIsMobile(false)
     }
   }, [])
-  return <>
-    <div className='block md:hidden'>
-      <MobileAccordion />
-    </div>
-    <div className='hidden md:block'>
-      <DesktopAccordion />
-    </div>
-  </>
+  return (
+    <>
+      <div className='block md:hidden'>
+        <MobileAccordion />
+      </div>
+      <div className='hidden md:block'>
+        <DesktopAccordion />
+      </div>
+    </>
+  )
 }
 
 export default withErrorHandled(Adaptive)

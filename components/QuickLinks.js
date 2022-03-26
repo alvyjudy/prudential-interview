@@ -30,8 +30,8 @@ function TextOverImage({
 
 function AppQRCode() {
   return <div className="grid grid-cols-4 grid-rows-2 bg-white h-20 w-30 rounded-md p-2">
-    <div className="row-span-2 col-span-1 relative">
-      <Image src="/app-qr-code.png" alt="qr-code" layout='fill' />
+    <div className="row-span-2 col-span-1 relative ">
+      <Image src="/app-qr-code.png" alt="qr-code" layout='fill' objectFit=""/>
     </div>
       <p className="text-md text-black col-span-3 row-span-1 justify-self-center self-center">下载简书手机App</p>
       <p className="text-xs text-gray-700 col-span-3 row-span-1 justify-self-center self-center">随时随地发现和创作内容</p>
