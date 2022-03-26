@@ -1,3 +1,22 @@
+Object.defineProperty(String.prototype, 'capitalize', {
+  value: function() {
+    return this.charAt(0).toUpperCase() + this.slice(1);
+  },
+  enumerable: false
+});
+
+Object.defineProperty(String.prototype, 'toTitleCase', {
+  value: function() {
+    const phrase = this
+    return phrase
+    .toLowerCase()
+    .split(' ')
+    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(' ');
+  },
+  enumerable: false
+});
+
 const mongoose = require('mongoose')
 const { MongoClient } = require('mongodb')
 const { LoremIpsum } = require('lorem-ipsum')
@@ -44,7 +63,7 @@ const randomDate= () => (new Date(Math.random() * new Date().getTime())).toLocal
 
 const createBunch = async () => {
   await Promise.all(Array(10).fill(0).map(async () => {
-    const authorName = lorem.generateWords(2)
+    const authorName = lorem.generateWords(2).toTitleCase()
     const author = await Author.create({
       avatarUrl: 'https://gravatar.com/avatar/6c15cec1bf07bd26f1c293039c503752?s=400&d=robohash&r=x',
       authorName,
@@ -55,8 +74,8 @@ const createBunch = async () => {
     const authorId = author._id.toString()
     await Promise.all(Array(10).fill(0).map(async () => {
       await Post.create({
-        title: lorem.generateWords(6),
-        content: lorem.generateParagraphs(8),
+        title: lorem.generateWords(6).capitalize(),
+        content: lorem.generateParagraphs(8).capitalize(),
         preview: lorem.generateParagraphs(1),
         authorName,
         authorId,

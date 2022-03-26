@@ -33,7 +33,7 @@ function AuthorInfoRight() {
           {posts.map(post => {
             const href = `/post/${post._id}`
             return (
-              <div key={post._id}>
+              <div key={post._id} className='border-t-2 border-neutral-600 my-2'>
                 <Link href={href}>{post.title}</Link>
               </div>
             )

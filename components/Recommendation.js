@@ -1,3 +1,4 @@
+import Link from "next/link"
 import Card from "./Card"
 import withErrorHandled from "./ErrorHandler"
 import StoriesHeading from "./StoriesHeading"
@@ -10,9 +11,13 @@ function Recommendation() {
       <StoriesHeading title="推荐阅读"/>
       <div>
         {stories.map(story => {
-          return <div key={story.id}>
-            <h2>{story.title}</h2>
-            <h3>阅读：{story.views}</h3>
+          return <div key={story._id} className='border-t-2 border-neutral-600 my-2'>
+            <h2>
+              <Link href={`/post/${story._id}`}>
+              {story.title}
+              </Link>
+            </h2>
+            <p className="text-sm">阅读：{story.views}</p>
           </div>
         })}
       </div>

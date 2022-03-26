@@ -8,6 +8,7 @@ function Article() {
   const article = useArticle()
   return (
     <Card>
+      <div className='p-5'>
       <div className='relative'>
         <div className='absolute top-20 -left-28'>
           <ArticleInteraction />
@@ -15,11 +16,11 @@ function Article() {
         <div>
           <Detail article={article}>
             <AuthorInfoTwo>
-              <p className='text-sm'>{article.timeCreated}</p>
-              <p>Views: {article.views}</p>
+              <p className='text-sm'>{article.timeCreated} Views: {article.views}</p>
             </AuthorInfoTwo>
           </Detail>
         </div>
+      </div>
       </div>
     </Card>
   )
