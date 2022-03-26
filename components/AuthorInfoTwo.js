@@ -3,7 +3,7 @@ import withErrorHandled from './ErrorHandler'
 import useArticle from './useArticle'
 import useAuthorInfo from './useAuthorInfo'
 
-function AuthorInfoTwo({ children }) {
+function AuthorInfoLeft({ children }) {
   const { authorId } = useArticle()
   const info = useAuthorInfo(authorId)
   return (
@@ -19,10 +19,10 @@ function AuthorInfoTwo({ children }) {
           />
         )}
       </div>
-      <p className='col-start-2 col-end-4 rows-span-1'>{info.author}</p>
+      <p className='col-start-2 col-end-4 rows-span-1'>{info.authorName}</p>
       <div className='col-start-2 col-end-4 rows-span-2'>{children}</div>
     </div>
   )
 }
 
-export default withErrorHandled(AuthorInfoTwo)
+export default withErrorHandled(AuthorInfoLeft)

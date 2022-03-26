@@ -24,16 +24,16 @@ function BlogPosts() {
 }
 
 function IndividualPost({ post }) {
-  const { id, title, author, rating, comments, liked, rewarded, content } = post
+  const { _id, title, author, rating, comments, likes, rewards, preview } = post
 
   return (
     <div className='border-b-2'>
       <h1 className='text-xl font-bold'>
-        <Link href={`/post/${id}`}>
+        <Link href={`/post/${_id}`}>
         {title}
         </Link>
       </h1>
-      <p>{content}</p>
+      <p>{preview}</p>
       <div className='flex gap-3 items-center'>
         <IconWithText className='text-orange-400'>
           <Sparkle />
@@ -46,11 +46,11 @@ function IndividualPost({ post }) {
         </IconWithText>
         <IconWithText>
           <Heart />
-          <p>{liked}</p>
+          <p>{likes}</p>
         </IconWithText>
         <IconWithText>
           <Dollar />
-          <p>{rewarded}</p>
+          <p>{rewards}</p>
         </IconWithText>
       </div>
       <div className='h-4'/>

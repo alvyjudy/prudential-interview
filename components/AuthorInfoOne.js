@@ -1,11 +1,12 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import Card from './Card'
 import withErrorHandled from './ErrorHandler'
 import useArticle from './useArticle'
 import useAuthorInfo from './useAuthorInfo'
 import useRecommend from './useRecommend'
 
-function AuthorInfoOne() {
+function AuthorInfoRight() {
   const article = useArticle()
   const { authorId } = article
   const info = useAuthorInfo(authorId)
@@ -25,11 +26,17 @@ function AuthorInfoOne() {
               />
             )}
           </div>
-          <p className='row-span-1 col-span-2'>{info.author}</p>
+          <p className='row-span-1 col-span-2'>{info.authorName}</p>
+          <p className='row-span-1 col-span-2'>总资产：{info.totalAssets}</p>
         </div>
         <div>
           {posts.map(post => {
-            return <div key={post.id}>{post.title}</div>
+            const href = `/post/${post._id}`
+            return (
+              <div key={post._id}>
+                <Link href={href}>{post.title}</Link>
+              </div>
+            )
           })}
         </div>
       </div>
@@ -37,4 +44,4 @@ function AuthorInfoOne() {
   )
 }
 
-export default withErrorHandled(AuthorInfoOne)
+export default withErrorHandled(AuthorInfoRight)

@@ -8,6 +8,7 @@ const {MONGO_DB_URI} = getSecrets()
 const PostSchema = {
   title: String,
   content: String,
+  preview: String,
   authorName: String,
   authorId: String,
   rating: Number,

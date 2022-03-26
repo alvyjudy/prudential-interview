@@ -44,18 +44,20 @@ const randomDate= () => (new Date(Math.random() * new Date().getTime())).toLocal
 
 const createBunch = async () => {
   await Promise.all(Array(10).fill(0).map(async () => {
-    const authorName = lorem.generateSentences(2)
+    const authorName = lorem.generateWords(2)
     const author = await Author.create({
       avatarUrl: 'https://gravatar.com/avatar/6c15cec1bf07bd26f1c293039c503752?s=400&d=robohash&r=x',
       authorName,
-      totalWritten: randomInt(),
-      totalAssets: randomInt(),
+      totalWritten: randomInt() * 123,
+      totalAssets: randomInt() * 123,
+      totalLikes: randomInt() * 123,
     })
     const authorId = author._id.toString()
     await Promise.all(Array(10).fill(0).map(async () => {
       await Post.create({
         title: lorem.generateWords(6),
-        content: lorem.generateParagraphs(1),
+        content: lorem.generateParagraphs(8),
+        preview: lorem.generateParagraphs(1),
         authorName,
         authorId,
         rating: randomInt(),
